@@ -1,0 +1,7 @@
+[
+    {"id":"tab_field_tester","type":"tab","label":"RAK10701 Field Tester","disabled":false},
+    {"id":"ttn_broker_field_tester","type":"mqtt-broker","name":"TTN (downlink)","broker":"nam1.cloud.thethings.network","port":8883,"clientid":"","autoConnect":true,"usetls":true,"protocolVersion":"4","keepalive":60,"cleansession":true,"birthTopic":"","birthQos":0,"birthRetain":false,"birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":0,"closeRetain":false,"closePayload":"","closeMsg":{},"willTopic":"","willQos":0,"willRetain":false,"willPayload":"","willMsg":{},"userProps":"","sessionExpiry":""},
+    {"id":"ft_mqtt_in","type":"mqtt in","z":"tab_field_tester","name":"RAK10701 uplinks","topic":"v3/my-app-tobi@ttn/devices/rak10701-plus/up","qos":0,"datatype":"json","broker":"4e91dd5ffb6a9ee8","nl":false,"rap":false,"rh":0,"inputs":0,"x":160,"y":100,"wires":[["ft_tester"]]},
+    {"id":"ft_tester","type":"field_tester_service","z":"tab_field_tester","name":"Field Tester","parser":"tts3","x":400,"y":100,"wires":[["ft_mqtt_out"]]},
+    {"id":"ft_mqtt_out","type":"mqtt out","z":"tab_field_tester","name":"Downlink to TTN","topic":"","qos":1,"retain":"false","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"ttn_broker_field_tester","x":640,"y":100,"wires":[]}
+]
