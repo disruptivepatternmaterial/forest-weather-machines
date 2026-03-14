@@ -1,3 +1,0 @@
-# LoRaWAN / TTN payload formatters (JavaScript)
-
-- Use **strict null checks** only: `=== null`, `!== null`, and explicit `=== undefined` / `!== undefined`. Never use `== null` or `!= null` in payload formatter .js files.
